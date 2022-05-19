@@ -6,16 +6,19 @@
 using namespace std;
 
 Bici::Bici(){
-    this->usuario = Persona("Anonimo");
-    this->marca = "sin marca";
+    this->usuario = Persona("Anonimo", "Numeron't", "Emailn't");
+    this->marca = "Sin marca";
+    this->color = "Sin color";
+    this->serial = "Sin serial";
 }
 
 void Bici::verObjeto(){
-    cout << "Bici: usuario: " << this->usuario.toString()
-                <<" marca:"<< this->marca << endl;
+    cout << "Bici:" << "\n" << this->usuario.toString() <<"Marca: "<< this->marca << " Color: " << this->color << " Serial: " << this->serial << "\n" <<endl;
 }
 
-void Bici::setBici(string usuario, string marca){
-    this->usuario.setNombre(usuario);
+void Bici::setBici(Persona usuario, string marca, string color, string serial){
+    this->usuario = usuario;
     this->marca = marca;
+    this->color =  color;
+    this->serial = serial;
 }

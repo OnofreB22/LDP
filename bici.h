@@ -9,10 +9,11 @@ using namespace std;
 class Bici{
     public:
         Bici();
-        ~Bici();
         void verObjeto();
-        void setBici(string usuario, string marca);
+        void setBici(Persona usuario, string marca, string color, string serial);
     private:
-        string marca;
         Persona usuario;
+        string marca;
+        string color;
+        string serial;
 };

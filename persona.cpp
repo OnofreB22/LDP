@@ -4,20 +4,25 @@
 
 using namespace std;
 
-    Persona::Persona(string nombre = "Sin nombre"){
+    Persona::Persona(string nombre = "Sin nombre", string telefono = "Sin telefono", string email = "Sin email"){
         this->nombre = nombre;
-    }
-
-    Persona::~Persona(){
-        cout<<"me destruyo"<<endl;
+        this->telefono = telefono;
+        this->email = email;
     }
 
     string Persona::toString(){
-        string texto = "Clase Persona:";
-        texto = texto + "nombre: " + this->nombre + "\n";
+        string texto = "Nombre: " + this->nombre + " Telefono: "+ this->telefono + " Email: " + this->email +"\n";
         return texto;
     }
 
     void Persona::setNombre(string nombre){
         this->nombre = nombre;
+    }
+
+    void Persona::setTelefono(string telefono){
+        this->telefono = telefono;
+    }
+
+    void Persona::setEmail(string email){
+        this->email = email;
     }

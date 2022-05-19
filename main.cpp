@@ -6,11 +6,11 @@
 using namespace std;
 
 int main(){
-    Persona *objPersona = new Persona("Onofre Benjumea");
+    Persona *objPersona = new Persona("Onofre Benjumea", "3137601600", "oabenjumev@gmail.com");
     Bici *objBici = new Bici();
     objBici->verObjeto();
 
-    objBici->setBici("Onofre Benjumea", "Shimano");
+    objBici->setBici(*objPersona, "Shimano", "verde", "001");
     objBici->verObjeto();
 
     return 0;
