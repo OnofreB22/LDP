@@ -15,6 +15,6 @@ func NewBici(u persona, m string, c string, s string) bici{
 
 func (b *bici) ShowBici(){
 	b.usuario.Show()
-	fmt.Println(b.modelo+" "+b.color+" "+b.serial)
+	fmt.Println("Modelo: "+b.modelo+" Color: "+b.color+" Serial: "+b.serial)
 	fmt.Println("")
 }

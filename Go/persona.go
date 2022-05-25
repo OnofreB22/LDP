@@ -13,5 +13,5 @@ func NewPersona(n string, t string, e string) persona{
 }
 
 func (p *persona) Show(){
-	fmt.Println(p.name+" "+p.telefono+" "+p.email)	
+	fmt.Println("Nombre: "+p.name+" Telefono: "+p.telefono+" Email: "+p.email)	
 }
