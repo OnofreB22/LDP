@@ -2,7 +2,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	var bicis []bici
@@ -10,7 +13,7 @@ func main() {
 	var val bool = true
 
 	for val{
-		fmt.Println("Bienvenido\n1.Agregar Bici\n2.Ver lista\n3.Mostrar cantidad de bicis\n4.Remover bici\n5.Terminar Programa",)
+		fmt.Println("Bienvenido\n1.Agregar Bici\n2.Ver lista\n3.Mostrar cantidad de bicis\n4.Remover bici\n5.Origanizar lista\n6.Terminar Programa",)
 		fmt.Println("")
 		fmt.Scanln(&op)
 		switch op{
@@ -23,6 +26,8 @@ func main() {
 		case 4:
 			removeBici(&bicis)
 		case 5:
+			sortBici(&bicis)
+		case 6:
 			val = false
 		default:
 			fmt.Println("Por favor ingresa un input valido")
@@ -77,5 +82,38 @@ func removeBici(bicis *[]bici){
 			newBicis = append(newBicis, element)
 		}
 	}
+	*bicis = newBicis
+}
+
+func sortBici(bicis *[]bici){
+	var colors []string
+	var newBicis []bici
+
+	for _, element := range *bicis{
+		colors = append(colors, element.color)
+	}
+
+	//remover valores duplicados de la lista de colores
+	inResult := make(map[string]bool)
+    var result []string
+    for _, str := range colors {
+        if _, ok := inResult[str]; !ok {
+            inResult[str] = true
+            result = append(result, str)
+        }
+    }
+
+	sort.Strings(result)
+	fmt.Println(result)
+
+	//organizar lista de bicicletas por color
+	for _, res := range result{
+		for _, element := range *bicis{
+			if res == element.color{
+				newBicis = append(newBicis, element)
+			}
+		}
+	}
+
 	*bicis = newBicis
 }
