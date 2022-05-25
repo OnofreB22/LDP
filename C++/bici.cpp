@@ -20,14 +20,18 @@ Bici::Bici(Persona usuario, string marca, string color, string serial){
 }
 
 void Bici::verObjeto(){
-    cout << "Bici:" << "\n" << this->usuario.toString() <<"Marca: "<< this->marca << " Color: " << this->color << " Serial: " << this->serial << "\n" <<endl;
+    cout << this->usuario.toString() <<"Marca: "<< this->marca << " Color: " << this->color << " Serial: " << this->serial << "\n" <<endl;
 }
 
 void Bici::setBici(string usuario, string telefono, string email, string marca, string color, string serial){
-    this->usuario.setNombre(email);
-    this->usuario.setTelefono(email);
+    this->usuario.setNombre(usuario);
+    this->usuario.setTelefono(telefono);
     this->usuario.setEmail(email);
     this->marca = marca;
     this->color =  color;
     this->serial = serial;
+}
+
+Persona Bici::getUsuario(){
+    return this->usuario;
 }

@@ -26,3 +26,7 @@ using namespace std;
     void Persona::setEmail(string email){
         this->email = email;
     }
+
+    string Persona::getName(){
+        return this->nombre;
+    }
