@@ -1,0 +1,36 @@
+Function: main/0
+Constants: None, "Ingrese valor: ", 69, "Te has equivocado rey", "Acertaste"
+Locals: a, b
+Globals: print, int, input
+
+BEGIN
+init:
+        LOAD_GLOBAL         1
+        LOAD_GLOBAL         2
+        LOAD_CONST          1
+        CALL_FUNCTION       1
+        CALL_FUNCTION       1
+        STORE_FAST          1
+
+        LOAD_CONST          2
+        STORE_FAST          0
+
+        LOAD_FAST           0
+        LOAD_FAST           1
+        COMPARE_OP          2
+        POP_JUMP_IF_TRUE    finalizar
+
+        LOAD_GLOBAL         0
+        LOAD_CONST          3
+        CALL_FUNCTION       1
+        JUMP_ABSOLUTE       init
+
+finalizar:
+        LOAD_GLOBAL         0
+        LOAD_CONST          4
+        CALL_FUNCTION       1
+
+        POP_TOP
+        LOAD_CONST          0
+        RETURN_VALUE
+END
